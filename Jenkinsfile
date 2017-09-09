@@ -15,10 +15,10 @@ node('php'){
     }
     
     stage('Docker Build') {
-        sh 'sudo docker build -t alansaar/todoapi:$BUILD_NUMBER .'
+        sh 'docker build -t alansaar/todoapi:$BUILD_NUMBER .'
     }
     
     stage('Docker Ship') {
-        sh 'sudo docker push alansaar/todoapi:$BUILD_NUMBER'
+        sh 'docker push alansaar/todoapi:$BUILD_NUMBER'
     }
 }
